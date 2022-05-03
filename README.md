@@ -1,44 +1,36 @@
-# YouTube embed image overlay
+# [bilibili 视频封面图](https://bb-embed.herokuapp.com/)
 
-A tool to add more visual cue when embedding YouTube videos in GitHub.
+在 GitHub 中嵌入 bilibili 视频时添加视觉提示的工具。
 
-## Run app localy
+## 本地运行应用程序
 
-- Make sure to have [nix package manager](https://nixos.org/download.html) installed.
-- Clone repo & cd into it.
-- Run: `nix-shell`
-- Inside the shell run `gunicorn -w 4 -b 0.0.0.0:8080 wsgi:app` and visit http://localhost:8080/
+- 确保已安装 [nix](https://nixos.org/download.html)
+- 克隆仓库，并 `cd` 进入
+- 运行 `nix-shell`
+- 运行 `gunicorn -w 4 -b 0.0.0.0:8080 wsgi:app` 并访问 http://localhost:8080/
 
-## Example
+## 示例
 
-The method I used before to embed YouTube videos inside my repos was from [here](https://stackoverflow.com/questions/11804820/how-can-i-embed-a-youtube-video-on-github-wiki-pages)
-
-
-For example, If I want to embed [this video](https://www.youtube.com/watch?v=3BYNj6Yvl8I) I'd use:
+例如，嵌入 [VS Code 代码片段（Snippets）管理\_哔哩哔哩\_bilibili](https://www.bilibili.com/video/BV1jS4y1w7SW?spm_id_from=333.999.0.0) 这个视频，使用：
 
 ```
-[![](http://img.youtube.com/vi/3BYNj6Yvl8I/0.jpg)](http://www.youtube.com/watch?v=3BYNj6Yvl8I "Video Title")
-
+[![](https://i1.hdslb.com/bfs/archive/9a32c55b90ac9485d02dc1a50dc1fa94d12b3111.jpg@640w_400h_1c.webp)](https://player.bilibili.com/player.html?aid=683633468&bvid=BV1jS4y1w7SW&cid=711074429&page=1)
 ```
 
-Here's how it'd look:
+外观是这样：
 
-[![](http://img.youtube.com/vi/3BYNj6Yvl8I/0.jpg)](http://www.youtube.com/watch?v=3BYNj6Yvl8I "Video Title")
+[![](https://i1.hdslb.com/bfs/archive/9a32c55b90ac9485d02dc1a50dc1fa94d12b3111.jpg@640w_400h_1c.webp)](https://player.bilibili.com/player.html?aid=683633468&bvid=BV1jS4y1w7SW&cid=711074429&page=1)
 
-The answer above suggest that we take screen shot and embed it to make it easir to reason that the above is a video and not an image.
-
-This tool will automate this process and add visial cues similar to an embeded youtube video.
-
-Here's how it'd look:
-
-[![](https://yt-embed.herokuapp.com/embed?v=3BYNj6Yvl8I)](http://www.youtube.com/watch?v=3BYNj6Yvl8I "Video Title")
-
+使用此工具自动添加视觉提示
 
 ```
-[![](https://yt-embed.herokuapp.com/embed?v=3BYNj6Yvl8I)](http://www.youtube.com/watch?v=3BYNj6Yvl8I "Video Title")
+[![](https://bb-embed.herokuapp.com/embed?v=BV1jS4y1w7SW)](https://player.bilibili.com/player.html?aid=683633468&bvid=BV1jS4y1w7SW&cid=711074429&page=1)
 ```
 
-## Deployment & Hosting
+外观是这样：
 
-I used [heorku](https://heroku.com/) for deployment. The app is hosted on https://yt-embed.herokuapp.com/
+[![](https://bb-embed.herokuapp.com/embed?v=BV1jS4y1w7SW)](https://player.bilibili.com/player.html?aid=683633468&bvid=BV1jS4y1w7SW&cid=711074429&page=1)
 
+## 部署和托管
+
+使用 [heorku](https://heroku.com/) 进行部署。该应用程序托管在 https://bb-embed.herokuapp.com/

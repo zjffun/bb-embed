@@ -5,14 +5,16 @@ from io import BytesIO
 
 
 def embed_image(video_id, img):
-    image = get_image(video_id, img)
+    info = get_info(video_id)
+
+    image = get_image(info)
 
     w, h = image.size
-    title = elipsis(get_title(video_id), 25)
+    # title = elipsis(get_title(info), 25)
 
     insert_play_button(image, w, h)
 
-    insert_header(image, w, h, title)
+    # insert_header(image, w, h, title)
 
     byte_arr = BytesIO()
     image.save(byte_arr, format="PNG")
@@ -24,16 +26,21 @@ def embed_image(video_id, img):
 def elipsis(_str, char_stop):
     return _str[:char_stop] + (_str[char_stop:] and '...')
 
-def get_title(video_id):
+
+def get_info(video_id):
     response = requests.get(
-        f"https://www.youtube.com/oembed?format=json&url=https://www.youtube.com/watch?v={video_id}"
+        f"http://api.bilibili.com/x/web-interface/view?bvid={video_id}"
     )
+    return response.json()["data"]
 
-    return response.json()["title"]
+
+def get_title(info):
+    return info["title"]
 
 
-def get_image(video_id, img):
-    url = f"https://img.youtube.com/vi/{video_id}/{img}.jpg"
+def get_image(info):
+    pic = info["pic"]
+    url = f"{pic}@640w_400h_1c.jpg"
     response = requests.get(url)
 
     print("url", url)
@@ -42,9 +49,9 @@ def get_image(video_id, img):
 
 
 def insert_play_button(image, w, h):
-    play = Image.open("./src/static/play.png")
+    play = Image.open("./src/static/play.png").convert("RGBA")
 
-    image.paste(play, ((w - 68) // 2, (h - 48) // 2), play)
+    image.paste(play, ((w - 80) // 2, (h - 80) // 2), play)
 
 
 def insert_header(image, w, h, title):
