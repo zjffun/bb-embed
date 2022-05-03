@@ -11,7 +11,7 @@
 
 ## 示例
 
-例如，嵌入 [VS Code 代码片段（Snippets）管理\_哔哩哔哩\_bilibili](https://www.bilibili.com/video/BV1jS4y1w7SW?spm_id_from=333.999.0.0) 这个视频，使用：
+嵌入 [VS Code 代码片段（Snippets）管理\_哔哩哔哩\_bilibili](https://www.bilibili.com/video/BV1jS4y1w7SW?spm_id_from=333.999.0.0) 这个视频，使用：
 
 ```
 [![](https://i1.hdslb.com/bfs/archive/9a32c55b90ac9485d02dc1a50dc1fa94d12b3111.jpg@640w_400h_1c.webp)](https://player.bilibili.com/player.html?aid=683633468&bvid=BV1jS4y1w7SW&cid=711074429&page=1)
