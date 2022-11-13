@@ -1,4 +1,4 @@
-# [bilibili 视频封面图](https://bb-embed.herokuapp.com/)
+# [bilibili 视频封面图](https://bb-embed.zjffun.com/)
 
 在 GitHub 中嵌入 bilibili 视频时添加视觉提示的工具。
 
@@ -24,13 +24,13 @@
 使用此工具自动添加视觉提示
 
 ```
-[![](https://bb-embed.herokuapp.com/embed?v=BV1jS4y1w7SW)](https://player.bilibili.com/player.html?aid=683633468&bvid=BV1jS4y1w7SW&cid=711074429&page=1)
+[![](https://bb-embed.zjffun.com/embed?v=BV1jS4y1w7SW)](https://player.bilibili.com/player.html?aid=683633468&bvid=BV1jS4y1w7SW&cid=711074429&page=1)
 ```
 
 外观是这样：
 
-[![](https://bb-embed.herokuapp.com/embed?v=BV1jS4y1w7SW)](https://player.bilibili.com/player.html?aid=683633468&bvid=BV1jS4y1w7SW&cid=711074429&page=1)
+[![](https://bb-embed.zjffun.com/embed?v=BV1jS4y1w7SW)](https://player.bilibili.com/player.html?aid=683633468&bvid=BV1jS4y1w7SW&cid=711074429&page=1)
 
-## 部署和托管
+## 常见问题
 
-使用 [heorku](https://heroku.com/) 进行部署。该应用程序托管在 https://bb-embed.herokuapp.com/
+如果发现 2022 年 12 月之前的图片错误，将图片地址的 `https://bb-embed.herokuapp.com/` 更换为 `https://bb-embed.zjffun.com/` 即可。
