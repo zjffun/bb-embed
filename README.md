@@ -2,13 +2,6 @@
 
 在 GitHub 中嵌入 bilibili 视频时添加视觉提示的工具。
 
-## 本地运行应用程序
-
-- 确保已安装 [nix](https://nixos.org/download.html)
-- 克隆仓库，并 `cd` 进入
-- 运行 `nix-shell`
-- 运行 `gunicorn -w 4 -b 0.0.0.0:8080 wsgi:app` 并访问 http://localhost:8080/
-
 ## 示例
 
 嵌入 [VS Code 代码片段（Snippets）管理\_哔哩哔哩\_bilibili](https://www.bilibili.com/video/BV1jS4y1w7SW?spm_id_from=333.999.0.0) 这个视频，使用：
@@ -44,13 +37,13 @@ docker compose -f docker-compose.dev.yml up --build
 ## 部署
 
 ```sh
-docker run -d --restart=always --name bb-embed -p 8848:8000 zjffun/bb-embed
+sudo docker run -d --restart=always --name bb-embed -p 8848:8000 zjffun/bb-embed
 ```
 
 NGINX 配置:
 
 ```bash
-cat <<'EOF' > /etc/nginx/sites-enabled/bb-embed-zjffun-com
+sudo cat <<'EOF' > /etc/nginx/sites-enabled/bb-embed-zjffun-com
 server {
     server_name bb-embed.zjffun.com;
     listen 80;
