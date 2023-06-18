@@ -34,3 +34,30 @@
 ## 常见问题
 
 如果发现 2022 年 12 月之前的图片错误，将图片地址的 `https://bb-embed.herokuapp.com/` 更换为 `https://bb-embed.zjffun.com/` 即可。
+
+## 本地开发
+
+```sh
+docker compose -f docker-compose.dev.yml up --build
+```
+
+## 部署
+
+```sh
+docker run -d --restart=always --name bb-embed -p 8848:8000 zjffun/bb-embed
+```
+
+NGINX 配置:
+
+```bash
+cat <<'EOF' > /etc/nginx/sites-enabled/bb-embed-zjffun-com
+server {
+    server_name bb-embed.zjffun.com;
+    listen 80;
+
+    location / {
+        proxy_pass http://localhost:8848;
+    }
+}
+EOF
+```
