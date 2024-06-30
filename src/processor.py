@@ -29,7 +29,7 @@ def elipsis(_str, char_stop):
 
 def get_info(video_id):
     response = requests.get(
-        f"http://api.bilibili.com/x/web-interface/view?bvid={video_id}"
+        f"https://api.bilibili.com/x/web-interface/view?bvid={video_id}"
     )
     return response.json()["data"]
 
