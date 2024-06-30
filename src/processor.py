@@ -31,6 +31,7 @@ def get_info(video_id):
     response = requests.get(
         f"https://api.bilibili.com/x/web-interface/view?bvid={video_id}"
     )
+    # TODO: error {"code":-412,"message":"request was banned","ttl":1}
     return response.json()["data"]
 
 
